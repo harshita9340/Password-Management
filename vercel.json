@@ -8,10 +8,7 @@
       {
         "src": "package.json",
         "use": "@vercel/static-build",
-        "config": { 
-          "distDir": "dist",
-          "buildCommand": "npm run build"
-        }
+        "config": { "distDir": "dist" }
       }
     ],
     "routes": [
@@ -20,8 +17,16 @@
         "dest": "backend/server.js"
       },
       {
+        "src": "^/assets/(.*)",
+        "dest": "/dist/assets/$1"
+      },
+      {
+        "src": "^/favicon.ico",
+        "dest": "/dist/favicon.ico"
+      },
+      {
         "src": "/(.*)",
-        "dest": "/index.html"
+        "dest": "/dist/index.html"
       }
     ]
   }
