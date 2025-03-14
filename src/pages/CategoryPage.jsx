@@ -32,7 +32,7 @@ function CategoryPage() {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      const { data } = await axios.get('http://localhost:5000/api/passwords', config);
+      const { data } = await axios.get('/api/passwords', config);
       // Add showPassword property to each password object
       const passwordsWithShowProperty = data
         .filter((p) => p.category === type)
@@ -53,7 +53,7 @@ function CategoryPage() {
         },
       };
       await axios.post(
-        'http://localhost:5000/api/passwords',
+        '/api/passwords',
         {
           category: type,
           subcategory: type,
@@ -75,7 +75,7 @@ function CategoryPage() {
           Authorization: `Bearer ${user.token}`,
         },
       };
-      await axios.delete(`http://localhost:5000/api/passwords/${id}`, config);
+      await axios.delete(`/api/passwords/${id}`, config);
       fetchPasswords();
     } 
     catch (error) {
