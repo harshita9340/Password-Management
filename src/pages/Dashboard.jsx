@@ -256,6 +256,86 @@ function Dashboard() {
         .orbit-4 {
           animation: orbit-4 10s infinite linear;
         }
+
+        /* Add these responsive styles */
+        @media (max-width: 768px) {
+          .max-w-6xl {
+            padding: 0 1rem;
+          }
+          
+          .text-3xl {
+            font-size: 1.5rem;
+          }
+          
+          .md\\:text-4xl {
+            font-size: 2rem;
+          }
+          
+          .grid-cols-1 {
+            grid-template-columns: 1fr;
+          }
+          
+          .sm\\:grid-cols-2 {
+            grid-template-columns: 1fr;
+          }
+          
+          .lg\\:grid-cols-4 {
+            grid-template-columns: 1fr;
+          }
+          
+          .gap-6 {
+            gap: 1rem;
+          }
+          
+          .p-6 {
+            padding: 1rem;
+          }
+          
+          .mb-12 {
+            margin-bottom: 2rem;
+          }
+          
+          .md\\:grid-cols-3 {
+            grid-template-columns: 1fr;
+          }
+          
+          .h-12 {
+            height: 2.5rem;
+          }
+          
+          .w-12 {
+            width: 2.5rem;
+          }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+          .lg\\:grid-cols-4 {
+            grid-template-columns: repeat(2, 1fr);
+          }
+          
+          .md\\:grid-cols-3 {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        /* Improve touch targets on mobile */
+        @media (hover: none) {
+          .group:hover {
+            transform: none;
+          }
+          
+          .group {
+            transition: none;
+          }
+          
+          .p-6 {
+            padding: 1.25rem;
+          }
+          
+          .text-sm {
+            font-size: 0.875rem;
+          }
+        }
       `}</style>
     </div>
   );
